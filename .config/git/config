@@ -1,0 +1,59 @@
+[user]
+	#email = PRIVATE
+	#name = PRIVATE
+[core]
+	editor = vim
+	autocrlf = input
+	excludesfile = ~/.config/ignore_global
+[apply]
+	whitespace = fix
+[alias]
+	ci = commit
+	st = status
+
+# color when using brand, diff and status git commands
+[color]
+	ui = true
+[color "branch"]
+	current = yellow reverse
+	local = yellow
+	remote = green
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+[color "status"]
+	added = yellow
+	changed = green
+	untracked = cyan
+[merge]
+	log = true
+[rerere]
+	enabled = 1
+[push]
+	# This will simply refuses to push if no remote is provided
+	# git push will fail when git push origin master will be ok
+	#default = nothing
+	#
+	# This is a better value considering what I want to do
+	default = simple
+[pull]
+	# This will make git pull do a git pull --rebase by default
+	rebase=true
+[remote]
+	pushdefault=origin
+[branch "devel"]
+	remote = upstream
+	pushremote = origin
+	merge = refs/heads/devel
+[branch "master"]
+	remote = upstream
+	pushremote = origin
+	merge = refs/heads/master
+
+[filter "gitconfig-remove-identity"]
+	# remove my name and email on commit/diff
+	# the cleanup is applied via gitconfig
+	# this line is written in a way it doesn't match this line
+	clean = "sed -e 's/^[ \t]*name[ \t]=.*/\t#name = PRIVATE/;s/^[ \t]*email[ \t]*=.*/\t#email = PRIVATE/'"

@@ -1,0 +1,21 @@
+# Exclude non-dot files
+/[^.]*
+
+# temporary X/Wayland file
+/.ICEauthority
+
+# local files
+/.cache
+/.local/lib
+/.local/share
+
+# software specific I want to exclude
+/.mozilla
+/.gnupg
+
+# I don't use bash (only fish)
+/.bashrc
+/.bash_history
+/.bash_profile
+/.bash_logout
+/.profile
