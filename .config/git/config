@@ -27,6 +27,10 @@
 	added = yellow
 	changed = green
 	untracked = cyan
+[pager]
+	diff = diff-so-fancy | less --tabs=4 -RFX
+	show = diff-so-fancy | less --tabs=4 -RFX
+
 [merge]
 	log = true
 [rerere]
